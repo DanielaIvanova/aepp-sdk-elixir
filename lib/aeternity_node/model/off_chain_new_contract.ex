@@ -9,28 +9,26 @@ defmodule AeternityNode.Model.OffChainNewContract do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"op",
-    :"owner",
-    :"vm_version",
-    :"code",
-    :"deposit",
-    :"call_data"
+    :op,
+    :owner,
+    :vm_version,
+    :code,
+    :deposit,
+    :call_data
   ]
 
   @type t :: %__MODULE__{
-    :"op" => String.t,
-    :"owner" => EncodedHash,
-    :"vm_version" => integer(),
-    :"code" => ByteCode,
-    :"deposit" => integer(),
-    :"call_data" => EncodedByteArray
-  }
+          :op => String.t(),
+          :owner => EncodedHash,
+          :vm_version => integer(),
+          :code => ByteCode,
+          :deposit => integer(),
+          :call_data => EncodedByteArray
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OffChainNewContract do
-
   def decode(value, options) do
     value
   end
 end
-

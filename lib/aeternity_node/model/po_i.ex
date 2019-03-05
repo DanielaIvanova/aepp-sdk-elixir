@@ -4,17 +4,17 @@
 
 defmodule AeternityNode.Model.PoI do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"poi"
+    :poi
   ]
 
   @type t :: %__MODULE__{
-    :"poi" => String.t
-  }
+          :poi => String.t()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.PoI do
@@ -22,4 +22,3 @@ defimpl Poison.Decoder, for: AeternityNode.Model.PoI do
     value
   end
 end
-

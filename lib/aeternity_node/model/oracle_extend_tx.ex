@@ -9,26 +9,24 @@ defmodule AeternityNode.Model.OracleExtendTx do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"fee",
-    :"oracle_ttl",
-    :"oracle_id",
-    :"nonce",
-    :"ttl"
+    :fee,
+    :oracle_ttl,
+    :oracle_id,
+    :nonce,
+    :ttl
   ]
 
   @type t :: %__MODULE__{
-    :"fee" => integer(),
-    :"oracle_ttl" => RelativeTtl,
-    :"oracle_id" => EncodedHash,
-    :"nonce" => integer(),
-    :"ttl" => integer()
-  }
+          :fee => integer(),
+          :oracle_ttl => RelativeTtl,
+          :oracle_id => EncodedHash,
+          :nonce => integer(),
+          :ttl => integer()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleExtendTx do
-
   def decode(value, options) do
     value
   end
 end
-

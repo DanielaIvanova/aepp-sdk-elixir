@@ -6,7 +6,6 @@ defmodule AeternityNode.Api.Chain do
   alias AeternityNode.Connection
   import AeternityNode.RequestBuilder
 
-
   @doc """
   Get the current generation
 
@@ -20,7 +19,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.Generation{}} on success
   {:error, info} on failure
   """
-  @spec get_current_generation(Tesla.Env.client, keyword()) :: {:ok, AeternityNode.Model.Generation.t} | {:error, Tesla.Env.t}
+  @spec get_current_generation(Tesla.Env.client(), keyword()) ::
+          {:ok, AeternityNode.Model.Generation.t()} | {:error, Tesla.Env.t()}
   def get_current_generation(connection, _opts \\ []) do
     %{}
     |> method(:get)
@@ -43,7 +43,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.KeyBlock{}} on success
   {:error, info} on failure
   """
-  @spec get_current_key_block(Tesla.Env.client, keyword()) :: {:ok, AeternityNode.Model.KeyBlock.t} | {:error, Tesla.Env.t}
+  @spec get_current_key_block(Tesla.Env.client(), keyword()) ::
+          {:ok, AeternityNode.Model.KeyBlock.t()} | {:error, Tesla.Env.t()}
   def get_current_key_block(connection, _opts \\ []) do
     %{}
     |> method(:get)
@@ -66,7 +67,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.InlineResponse200{}} on success
   {:error, info} on failure
   """
-  @spec get_current_key_block_hash(Tesla.Env.client, keyword()) :: {:ok, AeternityNode.Model.InlineResponse200.t} | {:error, Tesla.Env.t}
+  @spec get_current_key_block_hash(Tesla.Env.client(), keyword()) ::
+          {:ok, AeternityNode.Model.InlineResponse200.t()} | {:error, Tesla.Env.t()}
   def get_current_key_block_hash(connection, _opts \\ []) do
     %{}
     |> method(:get)
@@ -89,7 +91,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.InlineResponse2001{}} on success
   {:error, info} on failure
   """
-  @spec get_current_key_block_height(Tesla.Env.client, keyword()) :: {:ok, AeternityNode.Model.InlineResponse2001.t} | {:error, Tesla.Env.t}
+  @spec get_current_key_block_height(Tesla.Env.client(), keyword()) ::
+          {:ok, AeternityNode.Model.InlineResponse2001.t()} | {:error, Tesla.Env.t()}
   def get_current_key_block_height(connection, _opts \\ []) do
     %{}
     |> method(:get)
@@ -113,7 +116,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.Generation{}} on success
   {:error, info} on failure
   """
-  @spec get_generation_by_hash(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.Generation.t} | {:error, Tesla.Env.t}
+  @spec get_generation_by_hash(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.Generation.t()} | {:error, Tesla.Env.t()}
   def get_generation_by_hash(connection, hash, _opts \\ []) do
     %{}
     |> method(:get)
@@ -137,7 +141,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.Generation{}} on success
   {:error, info} on failure
   """
-  @spec get_generation_by_height(Tesla.Env.client, integer(), keyword()) :: {:ok, AeternityNode.Model.Generation.t} | {:error, Tesla.Env.t}
+  @spec get_generation_by_height(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, AeternityNode.Model.Generation.t()} | {:error, Tesla.Env.t()}
   def get_generation_by_height(connection, height, _opts \\ []) do
     %{}
     |> method(:get)
@@ -161,7 +166,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.KeyBlock{}} on success
   {:error, info} on failure
   """
-  @spec get_key_block_by_hash(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.KeyBlock.t} | {:error, Tesla.Env.t}
+  @spec get_key_block_by_hash(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.KeyBlock.t()} | {:error, Tesla.Env.t()}
   def get_key_block_by_hash(connection, hash, _opts \\ []) do
     %{}
     |> method(:get)
@@ -185,7 +191,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.KeyBlock{}} on success
   {:error, info} on failure
   """
-  @spec get_key_block_by_height(Tesla.Env.client, integer(), keyword()) :: {:ok, AeternityNode.Model.KeyBlock.t} | {:error, Tesla.Env.t}
+  @spec get_key_block_by_height(Tesla.Env.client(), integer(), keyword()) ::
+          {:ok, AeternityNode.Model.KeyBlock.t()} | {:error, Tesla.Env.t()}
   def get_key_block_by_height(connection, height, _opts \\ []) do
     %{}
     |> method(:get)
@@ -209,7 +216,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.MicroBlockHeader{}} on success
   {:error, info} on failure
   """
-  @spec get_micro_block_header_by_hash(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.MicroBlockHeader.t} | {:error, Tesla.Env.t}
+  @spec get_micro_block_header_by_hash(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.MicroBlockHeader.t()} | {:error, Tesla.Env.t()}
   def get_micro_block_header_by_hash(connection, hash, _opts \\ []) do
     %{}
     |> method(:get)
@@ -234,7 +242,12 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.GenericSignedTx{}} on success
   {:error, info} on failure
   """
-  @spec get_micro_block_transaction_by_hash_and_index(Tesla.Env.client, String.t, integer(), keyword()) :: {:ok, AeternityNode.Model.GenericSignedTx.t} | {:error, Tesla.Env.t}
+  @spec get_micro_block_transaction_by_hash_and_index(
+          Tesla.Env.client(),
+          String.t(),
+          integer(),
+          keyword()
+        ) :: {:ok, AeternityNode.Model.GenericSignedTx.t()} | {:error, Tesla.Env.t()}
   def get_micro_block_transaction_by_hash_and_index(connection, hash, index, _opts \\ []) do
     %{}
     |> method(:get)
@@ -258,7 +271,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.GenericTxs{}} on success
   {:error, info} on failure
   """
-  @spec get_micro_block_transactions_by_hash(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.GenericTxs.t} | {:error, Tesla.Env.t}
+  @spec get_micro_block_transactions_by_hash(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.GenericTxs.t()} | {:error, Tesla.Env.t()}
   def get_micro_block_transactions_by_hash(connection, hash, _opts \\ []) do
     %{}
     |> method(:get)
@@ -282,7 +296,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.InlineResponse2002{}} on success
   {:error, info} on failure
   """
-  @spec get_micro_block_transactions_count_by_hash(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.InlineResponse2002.t} | {:error, Tesla.Env.t}
+  @spec get_micro_block_transactions_count_by_hash(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.InlineResponse2002.t()} | {:error, Tesla.Env.t()}
   def get_micro_block_transactions_count_by_hash(connection, hash, _opts \\ []) do
     %{}
     |> method(:get)
@@ -305,7 +320,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.KeyBlock{}} on success
   {:error, info} on failure
   """
-  @spec get_pending_key_block(Tesla.Env.client, keyword()) :: {:ok, AeternityNode.Model.KeyBlock.t} | {:error, Tesla.Env.t}
+  @spec get_pending_key_block(Tesla.Env.client(), keyword()) ::
+          {:ok, AeternityNode.Model.KeyBlock.t()} | {:error, Tesla.Env.t()}
   def get_pending_key_block(connection, _opts \\ []) do
     %{}
     |> method(:get)
@@ -328,7 +344,8 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %AeternityNode.Model.KeyBlockOrMicroBlockHeader{}} on success
   {:error, info} on failure
   """
-  @spec get_top_block(Tesla.Env.client, keyword()) :: {:ok, AeternityNode.Model.KeyBlockOrMicroBlockHeader.t} | {:error, Tesla.Env.t}
+  @spec get_top_block(Tesla.Env.client(), keyword()) ::
+          {:ok, AeternityNode.Model.KeyBlockOrMicroBlockHeader.t()} | {:error, Tesla.Env.t()}
   def get_top_block(connection, _opts \\ []) do
     %{}
     |> method(:get)
@@ -352,12 +369,13 @@ defmodule AeternityNode.Api.Chain do
   {:ok, %{}} on success
   {:error, info} on failure
   """
-  @spec post_key_block(Tesla.Env.client, AeternityNode.Model.KeyBlock.t, keyword()) :: {:ok, nil} | {:error, Tesla.Env.t}
+  @spec post_key_block(Tesla.Env.client(), AeternityNode.Model.KeyBlock.t(), keyword()) ::
+          {:ok, nil} | {:error, Tesla.Env.t()}
   def post_key_block(connection, body, _opts \\ []) do
     %{}
     |> method(:post)
     |> url("/key-blocks")
-    |> add_param(:body, :"body", body)
+    |> add_param(:body, :body, body)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> decode(false)

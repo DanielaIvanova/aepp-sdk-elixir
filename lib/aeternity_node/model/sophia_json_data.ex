@@ -9,18 +9,16 @@ defmodule AeternityNode.Model.SophiaJsonData do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"data"
+    :data
   ]
 
   @type t :: %__MODULE__{
-    :"data" => Object
-  }
+          :data => Object
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.SophiaJsonData do
-
   def decode(value, options) do
     value
   end
 end
-

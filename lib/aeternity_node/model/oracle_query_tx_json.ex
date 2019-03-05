@@ -9,38 +9,36 @@ defmodule AeternityNode.Model.OracleQueryTxJson do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"oracle_id",
-    :"query",
-    :"query_fee",
-    :"query_ttl",
-    :"response_ttl",
-    :"fee",
-    :"ttl",
-    :"sender_id",
-    :"nonce",
-    :"version",
-    :"type"
+    :oracle_id,
+    :query,
+    :query_fee,
+    :query_ttl,
+    :response_ttl,
+    :fee,
+    :ttl,
+    :sender_id,
+    :nonce,
+    :version,
+    :type
   ]
 
   @type t :: %__MODULE__{
-    :"oracle_id" => EncodedHash,
-    :"query" => String.t,
-    :"query_fee" => integer(),
-    :"query_ttl" => Ttl,
-    :"response_ttl" => RelativeTtl,
-    :"fee" => integer(),
-    :"ttl" => integer(),
-    :"sender_id" => EncodedHash,
-    :"nonce" => integer(),
-    :"version" => integer(),
-    :"type" => String.t
-  }
+          :oracle_id => EncodedHash,
+          :query => String.t(),
+          :query_fee => integer(),
+          :query_ttl => Ttl,
+          :response_ttl => RelativeTtl,
+          :fee => integer(),
+          :ttl => integer(),
+          :sender_id => EncodedHash,
+          :nonce => integer(),
+          :version => integer(),
+          :type => String.t()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleQueryTxJson do
-
   def decode(value, options) do
     value
   end
 end
-

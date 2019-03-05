@@ -9,36 +9,34 @@ defmodule AeternityNode.Model.NameUpdateTxJson do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"name_id",
-    :"name_ttl",
-    :"pointers",
-    :"client_ttl",
-    :"fee",
-    :"ttl",
-    :"account_id",
-    :"nonce",
-    :"version",
-    :"type"
+    :name_id,
+    :name_ttl,
+    :pointers,
+    :client_ttl,
+    :fee,
+    :ttl,
+    :account_id,
+    :nonce,
+    :version,
+    :type
   ]
 
   @type t :: %__MODULE__{
-    :"name_id" => EncodedHash,
-    :"name_ttl" => integer(),
-    :"pointers" => [NamePointer],
-    :"client_ttl" => integer(),
-    :"fee" => integer(),
-    :"ttl" => integer(),
-    :"account_id" => EncodedHash,
-    :"nonce" => integer(),
-    :"version" => integer(),
-    :"type" => String.t
-  }
+          :name_id => EncodedHash,
+          :name_ttl => integer(),
+          :pointers => [NamePointer],
+          :client_ttl => integer(),
+          :fee => integer(),
+          :ttl => integer(),
+          :account_id => EncodedHash,
+          :nonce => integer(),
+          :version => integer(),
+          :type => String.t()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameUpdateTxJson do
-
   def decode(value, options) do
     value
   end
 end
-

@@ -4,17 +4,13 @@
 
 defmodule AeternityNode.Model.Pow do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
-  defstruct [
-    
-  ]
+  defstruct []
 
-  @type t :: %__MODULE__{
-    
-  }
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.Pow do
@@ -22,4 +18,3 @@ defimpl Poison.Decoder, for: AeternityNode.Model.Pow do
     value
   end
 end
-

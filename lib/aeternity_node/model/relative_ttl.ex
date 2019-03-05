@@ -4,19 +4,19 @@
 
 defmodule AeternityNode.Model.RelativeTtl do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"type",
-    :"value"
+    :type,
+    :value
   ]
 
   @type t :: %__MODULE__{
-    :"type" => String.t,
-    :"value" => integer()
-  }
+          :type => String.t(),
+          :value => integer()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.RelativeTtl do
@@ -24,4 +24,3 @@ defimpl Poison.Decoder, for: AeternityNode.Model.RelativeTtl do
     value
   end
 end
-

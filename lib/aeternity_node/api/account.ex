@@ -6,7 +6,6 @@ defmodule AeternityNode.Api.Account do
   alias AeternityNode.Connection
   import AeternityNode.RequestBuilder
 
-
   @doc """
   Get an account by public key
 
@@ -21,7 +20,8 @@ defmodule AeternityNode.Api.Account do
   {:ok, %AeternityNode.Model.Account{}} on success
   {:error, info} on failure
   """
-  @spec get_account_by_pubkey(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.Account.t} | {:error, Tesla.Env.t}
+  @spec get_account_by_pubkey(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.Account.t()} | {:error, Tesla.Env.t()}
   def get_account_by_pubkey(connection, pubkey, _opts \\ []) do
     %{}
     |> method(:get)
@@ -45,7 +45,8 @@ defmodule AeternityNode.Api.Account do
   {:ok, %AeternityNode.Model.GenericTxs{}} on success
   {:error, info} on failure
   """
-  @spec get_pending_account_transactions_by_pubkey(Tesla.Env.client, String.t, keyword()) :: {:ok, AeternityNode.Model.GenericTxs.t} | {:error, Tesla.Env.t}
+  @spec get_pending_account_transactions_by_pubkey(Tesla.Env.client(), String.t(), keyword()) ::
+          {:ok, AeternityNode.Model.GenericTxs.t()} | {:error, Tesla.Env.t()}
   def get_pending_account_transactions_by_pubkey(connection, pubkey, _opts \\ []) do
     %{}
     |> method(:get)

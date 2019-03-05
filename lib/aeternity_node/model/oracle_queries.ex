@@ -9,18 +9,16 @@ defmodule AeternityNode.Model.OracleQueries do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"oracle_queries"
+    :oracle_queries
   ]
 
   @type t :: %__MODULE__{
-    :"oracle_queries" => [OracleQuery]
-  }
+          :oracle_queries => [OracleQuery]
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleQueries do
-
   def decode(value, options) do
     value
   end
 end
-

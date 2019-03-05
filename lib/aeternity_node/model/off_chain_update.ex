@@ -4,17 +4,17 @@
 
 defmodule AeternityNode.Model.OffChainUpdate do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"op"
+    :op
   ]
 
   @type t :: %__MODULE__{
-    :"op" => String.t
-  }
+          :op => String.t()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OffChainUpdate do
@@ -22,4 +22,3 @@ defimpl Poison.Decoder, for: AeternityNode.Model.OffChainUpdate do
     value
   end
 end
-

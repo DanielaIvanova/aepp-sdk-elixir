@@ -4,19 +4,19 @@
 
 defmodule AeternityNode.Model.SophiaBinaryData do
   @moduledoc """
-  
+
   """
 
   @derive [Poison.Encoder]
   defstruct [
     :"sophia-type",
-    :"data"
+    :data
   ]
 
   @type t :: %__MODULE__{
-    :"sophia-type" => String.t,
-    :"data" => String.t
-  }
+          :"sophia-type" => String.t(),
+          :data => String.t()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.SophiaBinaryData do
@@ -24,4 +24,3 @@ defimpl Poison.Decoder, for: AeternityNode.Model.SophiaBinaryData do
     value
   end
 end
-

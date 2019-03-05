@@ -9,24 +9,22 @@ defmodule AeternityNode.Model.OffChainTransfer do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"op",
-    :"from",
-    :"to",
-    :"am"
+    :op,
+    :from,
+    :to,
+    :am
   ]
 
   @type t :: %__MODULE__{
-    :"op" => String.t,
-    :"from" => EncodedHash,
-    :"to" => EncodedHash,
-    :"am" => integer()
-  }
+          :op => String.t(),
+          :from => EncodedHash,
+          :to => EncodedHash,
+          :am => integer()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OffChainTransfer do
-
   def decode(value, options) do
     value
   end
 end
-

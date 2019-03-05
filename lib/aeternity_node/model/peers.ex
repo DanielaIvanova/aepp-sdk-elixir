@@ -9,20 +9,18 @@ defmodule AeternityNode.Model.Peers do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"peers",
-    :"blocked"
+    :peers,
+    :blocked
   ]
 
   @type t :: %__MODULE__{
-    :"peers" => [Peer],
-    :"blocked" => [Peer]
-  }
+          :peers => [Peer],
+          :blocked => [Peer]
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.Peers do
-
   def decode(value, options) do
     value
   end
 end
-

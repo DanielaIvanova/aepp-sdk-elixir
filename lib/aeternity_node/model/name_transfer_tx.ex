@@ -9,28 +9,26 @@ defmodule AeternityNode.Model.NameTransferTx do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"name_id",
-    :"recipient_id",
-    :"fee",
-    :"ttl",
-    :"account_id",
-    :"nonce"
+    :name_id,
+    :recipient_id,
+    :fee,
+    :ttl,
+    :account_id,
+    :nonce
   ]
 
   @type t :: %__MODULE__{
-    :"name_id" => EncodedHash,
-    :"recipient_id" => EncodedHash,
-    :"fee" => integer(),
-    :"ttl" => integer(),
-    :"account_id" => EncodedHash,
-    :"nonce" => integer()
-  }
+          :name_id => EncodedHash,
+          :recipient_id => EncodedHash,
+          :fee => integer(),
+          :ttl => integer(),
+          :account_id => EncodedHash,
+          :nonce => integer()
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameTransferTx do
-
   def decode(value, options) do
     value
   end
 end
-

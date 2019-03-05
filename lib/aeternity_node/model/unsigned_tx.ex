@@ -9,18 +9,16 @@ defmodule AeternityNode.Model.UnsignedTx do
 
   @derive [Poison.Encoder]
   defstruct [
-    :"tx"
+    :tx
   ]
 
   @type t :: %__MODULE__{
-    :"tx" => EncodedHash
-  }
+          :tx => EncodedHash
+        }
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.UnsignedTx do
-
   def decode(value, options) do
     value
   end
 end
-
