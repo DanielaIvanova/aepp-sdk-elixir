@@ -19,10 +19,10 @@ defmodule AeternityNode.Model.NameRevokeTxJson do
   ]
 
   @type t :: %__MODULE__{
-          :name_id => EncodedHash,
+          :name_id => String.t(),
           :fee => integer(),
           :ttl => integer(),
-          :account_id => EncodedHash,
+          :account_id => String.t(),
           :nonce => integer(),
           :version => integer(),
           :type => String.t()

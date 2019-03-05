@@ -29,4 +29,5 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 config :aeternity_node,
-  port: "3013"
+  internal: "3113"
+  external: "3013"

@@ -12,7 +12,7 @@ defmodule AeternityNode.Connection do
   # Add any middleware here (authentication)
   plug(
     Tesla.Middleware.BaseUrl,
-    "http://localhost:#{Application.get_env(:aeternity_node, :port)}/v2"
+    "http://localhost:#{Application.get_env(:aeternity_node, :external)}/v2"
   )
 
   plug(Tesla.Middleware.Headers, [{"User-Agent", "Elixir"}])

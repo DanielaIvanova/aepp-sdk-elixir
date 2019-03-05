@@ -3,10 +3,7 @@
 # Do not edit the class manually.
 
 defmodule AeternityNode.Model.NameUpdateTx do
-  @moduledoc """
-
-  """
-
+  alias AeternityNode.Model.NamePointer
   @derive [Poison.Encoder]
   defstruct [
     :name_id,
@@ -20,13 +17,13 @@ defmodule AeternityNode.Model.NameUpdateTx do
   ]
 
   @type t :: %__MODULE__{
-          :name_id => EncodedHash,
+          :name_id => String.t(),
           :name_ttl => integer(),
-          :pointers => [NamePointer],
+          :pointers => [NamePointer.t()],
           :client_ttl => integer(),
           :fee => integer(),
           :ttl => integer(),
-          :account_id => EncodedHash,
+          :account_id => String.t(),
           :nonce => integer()
         }
 end
