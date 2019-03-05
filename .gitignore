@@ -24,4 +24,3 @@ aepp_sdk_elixir-*.tar
 
 # Ignore linter directories
 .elixir_ls/
-
