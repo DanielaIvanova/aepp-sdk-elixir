@@ -10,7 +10,7 @@ defmodule AeternityNode.Model.PostTxResponse do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.PostTxResponse do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

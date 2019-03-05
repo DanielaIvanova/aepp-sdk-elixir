@@ -29,7 +29,7 @@ defmodule AeternityNode.Model.NameUpdateTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameUpdateTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

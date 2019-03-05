@@ -16,7 +16,7 @@ defmodule AeternityNode.Model.NameEntry do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameEntry do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

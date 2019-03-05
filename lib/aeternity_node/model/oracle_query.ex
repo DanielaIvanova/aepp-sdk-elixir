@@ -27,7 +27,7 @@ defmodule AeternityNode.Model.OracleQuery do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleQuery do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

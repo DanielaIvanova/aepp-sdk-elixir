@@ -27,7 +27,7 @@ defmodule AeternityNode.Model.OracleResponseTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleResponseTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

@@ -33,7 +33,7 @@ defmodule AeternityNode.Model.OracleQueryTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleQueryTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
