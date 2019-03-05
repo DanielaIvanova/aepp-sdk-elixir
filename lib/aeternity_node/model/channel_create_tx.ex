@@ -30,7 +30,7 @@ defmodule AeternityNode.Model.ChannelCreateTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.ChannelCreateTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

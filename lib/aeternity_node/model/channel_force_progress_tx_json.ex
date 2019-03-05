@@ -32,7 +32,7 @@ defmodule AeternityNode.Model.ChannelForceProgressTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.ChannelForceProgressTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

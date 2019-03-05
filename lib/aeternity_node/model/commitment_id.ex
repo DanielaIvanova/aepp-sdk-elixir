@@ -10,7 +10,7 @@ defmodule AeternityNode.Model.CommitmentId do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.CommitmentId do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

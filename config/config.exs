@@ -29,5 +29,5 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 config :aeternity_node,
-  internal: "3113"
+  internal: "3113",
   external: "3013"

@@ -26,7 +26,7 @@ defmodule AeternityNode.Model.ContractCallObject do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.ContractCallObject do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

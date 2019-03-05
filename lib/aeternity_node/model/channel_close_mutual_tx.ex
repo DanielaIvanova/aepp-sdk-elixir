@@ -22,7 +22,7 @@ defmodule AeternityNode.Model.ChannelCloseMutualTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.ChannelCloseMutualTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

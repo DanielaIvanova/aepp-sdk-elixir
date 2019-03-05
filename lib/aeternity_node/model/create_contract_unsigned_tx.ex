@@ -12,7 +12,7 @@ defmodule AeternityNode.Model.CreateContractUnsignedTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.CreateContractUnsignedTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

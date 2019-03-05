@@ -29,7 +29,7 @@ defmodule AeternityNode.Model.NameUpdateTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameUpdateTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

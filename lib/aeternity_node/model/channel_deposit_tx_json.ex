@@ -28,7 +28,7 @@ defmodule AeternityNode.Model.ChannelDepositTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.ChannelDepositTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

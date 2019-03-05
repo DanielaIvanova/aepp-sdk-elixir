@@ -14,7 +14,7 @@ defmodule AeternityNode.Model.Generation do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.Generation do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

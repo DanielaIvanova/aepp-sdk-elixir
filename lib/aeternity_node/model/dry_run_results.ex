@@ -12,7 +12,7 @@ defmodule AeternityNode.Model.DryRunResults do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.DryRunResults do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

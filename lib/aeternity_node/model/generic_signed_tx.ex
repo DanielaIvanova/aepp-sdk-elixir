@@ -20,7 +20,7 @@ defmodule AeternityNode.Model.GenericSignedTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.GenericSignedTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

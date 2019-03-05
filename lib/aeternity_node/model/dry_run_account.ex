@@ -12,7 +12,7 @@ defmodule AeternityNode.Model.DryRunAccount do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.DryRunAccount do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

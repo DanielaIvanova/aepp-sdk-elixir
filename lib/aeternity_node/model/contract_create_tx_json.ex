@@ -36,7 +36,7 @@ defmodule AeternityNode.Model.ContractCreateTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.ContractCreateTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
