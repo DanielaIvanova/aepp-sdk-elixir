@@ -23,7 +23,7 @@ defmodule AeternityNode.Model.OracleRespondTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OracleRespondTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

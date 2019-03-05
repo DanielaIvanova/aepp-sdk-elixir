@@ -14,7 +14,7 @@ defmodule AeternityNode.Model.OffChainWithdrawal do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OffChainWithdrawal do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

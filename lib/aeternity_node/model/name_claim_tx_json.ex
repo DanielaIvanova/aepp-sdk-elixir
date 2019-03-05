@@ -24,7 +24,7 @@ defmodule AeternityNode.Model.NameClaimTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameClaimTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

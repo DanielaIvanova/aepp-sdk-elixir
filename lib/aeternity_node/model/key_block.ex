@@ -32,7 +32,7 @@ defmodule AeternityNode.Model.KeyBlock do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.KeyBlock do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

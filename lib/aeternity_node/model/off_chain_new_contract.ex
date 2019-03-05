@@ -22,7 +22,7 @@ defmodule AeternityNode.Model.OffChainNewContract do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.OffChainNewContract do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

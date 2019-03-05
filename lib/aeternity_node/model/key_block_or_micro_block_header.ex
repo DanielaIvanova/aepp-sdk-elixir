@@ -15,7 +15,7 @@ defmodule AeternityNode.Model.KeyBlockOrMicroBlockHeader do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.KeyBlockOrMicroBlockHeader do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

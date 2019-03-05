@@ -10,7 +10,7 @@ defmodule AeternityNode.Model.NameHash do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameHash do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

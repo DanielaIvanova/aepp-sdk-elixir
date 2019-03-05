@@ -31,7 +31,7 @@ defmodule AeternityNode.Model.Status do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.Status do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

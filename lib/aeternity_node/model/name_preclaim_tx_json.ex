@@ -22,7 +22,7 @@ defmodule AeternityNode.Model.NamePreclaimTxJson do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NamePreclaimTxJson do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

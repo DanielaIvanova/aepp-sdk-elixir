@@ -28,7 +28,7 @@ defmodule AeternityNode.Model.MicroBlockHeader do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.MicroBlockHeader do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end

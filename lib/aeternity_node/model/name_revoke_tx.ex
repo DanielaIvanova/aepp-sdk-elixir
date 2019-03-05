@@ -18,7 +18,7 @@ defmodule AeternityNode.Model.NameRevokeTx do
 end
 
 defimpl Poison.Decoder, for: AeternityNode.Model.NameRevokeTx do
-  def decode(value, options) do
+  def decode(value, _options) do
     value
   end
 end
