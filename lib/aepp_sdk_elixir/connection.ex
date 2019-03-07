@@ -17,12 +17,11 @@ defmodule AeternityNode.Connection do
   """
   @spec new() :: Tesla.Env.client()
   def new() do
-    # Application.get_env(:)
-    Tesla.client([{Tesla.Middleware.BaseUrl, "http://localhost:3113/v2"}])
+    Tesla.client([{Tesla.Middleware.BaseUrl, "http://localhost:3013/v2"}])
   end
 
   @spec new(String.t()) :: Tesla.Env.client()
-  def new(url) do
-    Tesla.client([{Tesla.Middleware.BaseUrl, url}])
+  def new(path) do
+    Tesla.client([{Tesla.Middleware.BaseUrl, path}])
   end
 end
