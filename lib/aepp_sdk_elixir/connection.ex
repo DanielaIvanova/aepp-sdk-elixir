@@ -5,12 +5,6 @@ defmodule AeternityNode.Connection do
 
   use Tesla
 
-  # Add any middleware here (authentication)
-  plug(
-    Tesla.Middleware.BaseUrl,
-    "http://localhost:#{Application.get_env(:aeternity_node, :external)}/v2"
-  )
-
   plug(Tesla.Middleware.Headers, [{"User-Agent", "Elixir"}])
   plug(Tesla.Middleware.EncodeJson)
 
@@ -22,7 +16,13 @@ defmodule AeternityNode.Connection do
   Tesla.Env.client
   """
   @spec new() :: Tesla.Env.client()
-  def new do
-    Tesla.client([])
+  def new() do
+    # Application.get_env(:)
+    Tesla.client([{Tesla.Middleware.BaseUrl, "http://localhost:3113/v2"}])
+  end
+
+  @spec new(String.t()) :: Tesla.Env.client()
+  def new(url) do
+    Tesla.client([{Tesla.Middleware.BaseUrl, url}])
   end
 end

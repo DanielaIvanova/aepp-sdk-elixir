@@ -134,7 +134,7 @@ defmodule AeternityNode.RequestBuilder do
     do: Poison.decode(body, as: struct)
 
   def decode({:ok, %Tesla.Env{status: 404, body: body}}, _struct),
-    do: {:error, Poison.decode!(body)}
+    do: {:error, Poison.decode(body)}
 
   def decode(response, _struct), do: {:error, response}
 end

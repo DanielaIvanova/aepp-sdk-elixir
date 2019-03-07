@@ -1,21 +1,20 @@
 # Aepp SDK Elixir
 
-**TODO: Add description**
+Elixir SDK for the revolutionary [æternity](https://aeternity.com/) blockchain, targeting the
+[æternity node](https://github.com/aeternity/aeternity) implementation.
 
-## Installation
+## Prerequisites
+Ensure that you have installed [Elixir](https://elixir-lang.org/install.html).
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `aepp_sdk_elixir` to your list of dependencies in `mix.exs`:
+## Setup the project
+```
+git clone https://github.com/aeternity/aepp-sdk-elixir
 
-```elixir
-def deps do
-  [
-    {:aepp_sdk_elixir, "~> 0.1.0"}
-  ]
-end
+cd aepp-sdk-elixir/
+
+mix deps.get
+
+iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/aepp_sdk_elixir](https://hexdocs.pm/aepp_sdk_elixir).
-
+Check out the [documentation](https://hexdocs.pm/aepp_sdk_elixir/api-reference.html).
