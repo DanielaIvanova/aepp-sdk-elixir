@@ -19,9 +19,7 @@ mix deps.get && iex -S mix
 ## Usage example
 **1.** To get an account record by pubkey, you should call:
 ``` elixir
-AeternityNode.Connection.new() 
-|>
-AeternityNode.Api.Account.get_account_by_pubkey("ak_1GPPzM3VDKCP5RNEbp2uBNtgGTHRNQmrNkeAKGp7wfPWKYQvM")
+AeternityNode.Connection.new() |> AeternityNode.Api.Account.get_account_by_pubkey("ak_1GPPzM3VDKCP5RNEbp2uBNtgGTHRNQmrNkeAKGp7wfPWKYQvM")
 ```
 Where:
 - `AeternityNode.Connection.new()` - creates a connection which holds the endpoint configuration, if called without parameter `path`, defaults to `"http://localhost:3013/v2"`.
