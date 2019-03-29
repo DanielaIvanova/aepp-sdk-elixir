@@ -22,6 +22,9 @@ defmodule AeppSdkElixir.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    [{:excoveralls, "~> 0.10", only: :test}, {:ex_doc, "~> 0.19", only: :dev, runtime: false}]
+    [
+    {:excoveralls, "~> 0.10", only: :test},
+    {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+  ]
   end
 end

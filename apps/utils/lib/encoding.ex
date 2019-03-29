@@ -2,6 +2,7 @@ defmodule Utils.Encoding do
   @moduledoc """
   Contains encoding/decoding utils
   """
+  alias AeternityNode.Model.SpendTx
 
   @checksum_bytes 4
 
@@ -65,6 +66,28 @@ defmodule Utils.Encoding do
     <<data::binary-size(bsize), _checksum::binary-size(@checksum_bytes)>> = decoded_payload
 
     data
+  end
+
+  def rlp_encode(%SpendTx{} = tx) do
+    # https://github.com/aeternity/protocol/blob/master/serializations.md
+    # Formula for Tx's: ExRLP.encode([[transaction_tag + transaction_version + tx_fields ]])
+    spend_tx_tag = 12
+    spend_tx_version = 1
+
+    :aeser_rlp.encode([
+      :binary.encode_unsigned(spend_tx_tag),
+      :binary.encode_unsigned(spend_tx_version),
+      [
+        :aeser_id.encode(:aeser_id.create(:account, tx.sender_id)),
+        :aeser_id.encode(:aeser_id.create(:account, tx.recipient_id)),
+        :binary.encode_unsigned(tx.amount),
+        :binary.encode_unsigned(tx.fee),
+        :binary.encode_unsigned(tx.ttl),
+        :binary.encode_unsigned(tx.nonce),
+        # All integers should be pre-encoded with :binary.encode_unsigned(int)
+        tx.payload
+      ]
+    ])
   end
 
   defp generate_checksum(payload) do
